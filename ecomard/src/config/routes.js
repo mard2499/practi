@@ -1,5 +1,3 @@
-import { Label } from "reactstrap"
-
 export default {
     routes:[
         {
@@ -9,6 +7,10 @@ export default {
         {
             label:"crear",
             path:"/crear"
+        },
+        {
+            label:"favoritos",
+            path:"/favoritos"
         }
     ]
 }
