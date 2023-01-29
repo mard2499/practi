@@ -74,8 +74,7 @@ function App() {
             <Route path="/" exact={true} component={Home} />     
             <Route path="/Create" component={Create} />
             
-              
-
+  
             </Switch>
           </Row>
         </Container>

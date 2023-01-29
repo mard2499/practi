@@ -2,6 +2,20 @@ import { Button, Col, Form, FormGroup, Label } from "reactstrap"
 import React, {useState,usseEffect} from "react"
 
 const Create = () => {
+
+    const [entryData, setEntryData]=useState({})
+    const changeHandler = event =>{
+        const propierty=event.target.name
+        const value=event.target.value
+        setEntryData({...entryData,[propierty]:value});
+    }
+
+    const saveEntry = event =>{
+        console.log(entryData)
+    }
+
+    
+
     return (
         <Col xs="12">
             <h1>Crear Articulo</h1>
@@ -9,22 +23,20 @@ const Create = () => {
             my-3 p-3">
                 <FormGroup>
                     <Label>Titulo</Label>
-                    <input>
-                    </input>
+                    <input name="title" onChange={changeHandler}/> 
                 </FormGroup>
 
                 <FormGroup>
                     <Label> Contenido</Label>
-                    <input>
-                    </input>
+                    <input name="content" onChange={changeHandler}/>  
                 </FormGroup>
 
                 <FormGroup>
                     <Label>Imagen</Label>
-                    <input>
-                    </input>
+                    <input name="picture" onChange={changeHandler}/>
                 </FormGroup>
-                <Button type="button" color= "light">Guardar</Button>
+
+                <Button type="button" color= "light" className="mt-3" onClick={saveEntry}>Guardar</Button>
             </Form>
 
         </Col>
