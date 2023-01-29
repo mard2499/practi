@@ -1,12 +1,12 @@
 export default {
     routes:[
         {
-            label:"home",
+            label:"Home",
             path:"/"
         },
         {
-            label:"crear",
-            path:"/crear"
+            label:"create",
+            path:"/Create"
         },
         {
             label:"favoritos",

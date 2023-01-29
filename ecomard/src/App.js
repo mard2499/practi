@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useState } from "react";
 import routes from './config/routes';
+import './App.css';
+
 
 import {
   BrowserRouter as Router,
@@ -23,7 +23,13 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
+  Label,
+  Container,
+  Row,
 } from 'reactstrap';
+import Home from "./page/Home"
+import Create from "./page/Create"
+
 
 
 function App() {
@@ -33,33 +39,47 @@ function App() {
 
 
   return (
-    <div className='app'>
+    <div className='App'>
       <Router>
         <Navbar color='dark' dark expand="md">
           <NavbarBrand href="/">Ecomard</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
-
-              <NavItem>
-                <Link to="/">
-                  <NavLink>Temas</NavLink>
-                </Link>
-              </NavItem>
-
-              <NavItem>
-                <Link to="/">
-                  <NavLink>Crear</NavLink>
-                </Link>
-              </NavItem>
+            {
+              routes.routes.map(routes => {
+                  const {label, path} = routes;
+                  return(
+                    <NavItem>
+                    <Link to={path}>
+                      <NavLink>{label}</NavLink>
+                    </Link>
+                  </NavItem>
+                  )
+              })
+            
+          }
 
             </Nav>
 
           </Collapse>
         </Navbar>
+
+
+       
+        
+        <Container>
+          <Row>
+            <Switch>
+            <Route path="/" exact={true} component={Home} />     
+            <Route path="/Create" component={Create} />
+            
+              
+
+            </Switch>
+          </Row>
+        </Container>
       </Router>
-
-
 
 
     </div>
