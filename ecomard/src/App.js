@@ -29,8 +29,8 @@ import {
 } from 'reactstrap';
 import Home from "./page/Home"
 import Create from "./page/Create"
-
-
+console.log(Home);
+console.log(Create);
 
 function App() {
   
