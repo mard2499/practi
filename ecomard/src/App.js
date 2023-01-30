@@ -29,14 +29,14 @@ import {
 } from 'reactstrap';
 import Home from "./page/Home"
 import Create from "./page/Create"
-console.log(Home);
-console.log(Create);
+import firebase from "./lib/firebase";
 
 function App() {
   
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
+  console.log(firebase.database)
 
   return (
     <div className='App'>
