@@ -1,5 +1,5 @@
 import { Button, Col, Form, FormGroup, Label } from "reactstrap"
-import React, {useState,usseEffect} from "react"
+import React, {useState,useEffect} from "react"
 import firebase from "../../lib/firebase"
 
 
@@ -11,7 +11,15 @@ const Create = () => {
     const database = firebase.database()
     const entriesRef=database.ref("/entries")
     
-   
+    useEffect(() => {
+        console.log("montando componentes")
+        console.log(database)
+        entriesRef.on("value",snapshot => {
+            console.log(snapshot)
+            console.log(snapshot.val())
+        }
+        )
+    },[])
     
     const changeHandler = event =>{
         const propierty=event.target.name
@@ -19,8 +27,9 @@ const Create = () => {
         setEntryData({...entryData,[propierty]:value});
     }
 
-    const saveEntry = event =>{
+    const saveEntry = () =>{
         console.log(entryData)
+        entriesRef.push(entryData)
     }
 
 

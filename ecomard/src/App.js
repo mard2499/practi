@@ -18,27 +18,24 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-  Label,
   Container,
   Row,
 } from 'reactstrap';
 import Home from "./page/Home"
 import Create from "./page/Create"
-import firebase from "./lib/firebase";
+
+
+
 
 function App() {
   
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-
-  console.log(firebase.database)
+  
+  
 
   return (
+   
     <div className='App'>
       <Router>
         <Navbar color='dark' dark expand="md">
