@@ -23,7 +23,7 @@ import {
 } from 'reactstrap';
 import Home from "./page/Home"
 import Create from "./page/Create"
-
+import Detail from "./page/Detail"
 
 
 
@@ -70,7 +70,7 @@ function App() {
             <Switch>
             <Route path="/" exact={true} component={Home} />     
             <Route path="/Create" component={Create} />
-            
+            <Route path="/Detail/:id" component={Detail} />
   
             </Switch>
           </Row>
