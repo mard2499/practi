@@ -19,7 +19,7 @@ const Detail = () => {
 
     return(
                             
-        <Col xs="12" >
+        <Col xs="180" >
             <Card
             style={{width: '35rem' }}
             >
